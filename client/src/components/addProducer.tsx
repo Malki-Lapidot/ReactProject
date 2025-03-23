@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import "../index.css";
 import { useNavigate } from "react-router-dom";
-import { producerContext } from "../cotext/producerContext";
+import { producerContext } from "../context/producerContext";
 import { producer } from "../types/producer";
 
 export const AddProducer = () => {

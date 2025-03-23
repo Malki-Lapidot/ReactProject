@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router"
-import { eventContext } from "../cotext/eventContext";
+import { eventContext } from "../context/eventContext";
 import { event } from "../types/event";
 import "../index.css"
 
@@ -33,7 +33,6 @@ export const EventDetailsForProducer = () => {
                 details: event.target.details.value,
                 image: currentEvent.image
             }     
-            console.log("newEvent",newEvent);      
             const result=await updateEvent(currentEvent._id, newEvent);
             if(result)
                 setCurrentEvent(result)

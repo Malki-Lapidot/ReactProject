@@ -1,5 +1,5 @@
 import { useContext, useEffect, useRef, useState } from "react";
-import { producerContext } from "../cotext/producerContext";
+import { producerContext } from "../context/producerContext";
 import { producer } from "../types/producer";
 import { useParams, useNavigate } from "react-router-dom";
 
@@ -94,7 +94,6 @@ export const ProducerDetails = () => {
                 <p><strong>Details:</strong> {currentProducer.details}</p>
               </div>
       
-              {/* כפתור Update Producer בצבע אפור */}
               <button className="update-btn" onClick={() => setShowForm(!showForm)}>
                 {showForm ? "Hide Form" : "Update Producer"}
               </button>
@@ -130,7 +129,6 @@ export const ProducerDetails = () => {
                 )}
               </div>
       
-              {/* כפתור Add Event */}
               <button className="add-event-btn" onClick={() => handleNavigate("AddEvent")}>
                 Add Event
               </button>

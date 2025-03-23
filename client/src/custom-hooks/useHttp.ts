@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useCallback,useEffect,useState } from "react";
+import { useCallback,useState } from "react";
 
 type HttpMethod='get'|'post'|'put'|'delete';
 
@@ -16,10 +16,8 @@ export function useHttp<T>(initialUrl:string,defaultMethod:HttpMethod='get'){
         defaultMethod = method;
         setLoading(true);
         setError('');
-        console.log(`📡 שולחת בקשה: ${method.toUpperCase()} ${url}`);
-        
+        console.log(`📡 שולחת בקשה: ${method.toUpperCase()} ${url}`);      
         try {
-            console.log("defaultMethod",defaultMethod)
             const result = await serverInstance[method]<T>(url, body);
             console.log("✅ קיבלתי תשובה:", result.data);
             setData(result.data as T);

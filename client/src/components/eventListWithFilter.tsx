@@ -1,6 +1,6 @@
 import { useContext, useState } from "react"
-import { eventContext } from "../cotext/eventContext"
-import { X, Search } from "lucide-react"; // אייקונים יפים מ-lucide-react
+import { eventContext } from "../context/eventContext"
+import { X, Search } from "lucide-react";
 import { EventDetailsForUser } from "./eventDetailsForUser";
 
 export const EventListWithFilter = () => {
@@ -8,7 +8,7 @@ export const EventListWithFilter = () => {
     const [searchTerm, setSearchTerm] = useState("");
 
     let filterEvents = events?.filter((e) =>
-        e.name.toLowerCase().includes(searchTerm.toLowerCase()) // בדיקה אם שם האירוע מכיל את הערך שהוזן
+        e.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
     return (
