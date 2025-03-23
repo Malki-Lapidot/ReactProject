@@ -1,0 +1,82 @@
+[
+    {
+      "name": "Concert of the Year",
+      "date": "2025-05-15T20:00:00Z",
+      "location": "Tel Aviv Arena",
+      "targetAudience": "Music Lovers",
+      "details": "Join us for an unforgettable night of music and fun.",
+      "image": "/image/Concert.jpg"
+    },
+    {
+      "name": "Tech Conference 2025",
+      "date": "2025-06-10T09:00:00Z",
+      "location": "Convention Center, Jerusalem",
+      "targetAudience": "Tech Enthusiasts",
+      "details": "A conference showcasing the latest in technology, innovation, and AI.",
+      "image": "/image/Tech.webp"
+    },
+    {
+      "name": "Fashion Week 2025",
+      "date": "2025-07-01T18:00:00Z",
+      "location": "Ramat Gan Expo Center",
+      "targetAudience": "Fashionistas",
+      "details": "Explore the latest fashion trends from the world's top designers.",
+      "image": "/image/Fashion.webp"
+    },
+    {
+      "name": "Food Festival",
+      "date": "2025-08-20T12:00:00Z",
+      "location": "Haifa Beach",
+      "targetAudience": "Food Lovers",
+      "details": "Taste the best street food from around the world at the biggest food festival.",
+      "image": "/image/Food.jpg"
+    },
+    {
+      "name": "Science Expo 2025",
+      "date": "2025-09-15T10:00:00Z",
+      "location": "National Science Museum, Tel Aviv",
+      "targetAudience": "Science Enthusiasts",
+      "details": "An interactive expo featuring cutting-edge science, experiments, and exhibits.",
+      "image": "/image/Science.jpg"
+    },
+    {
+      "name": "Yoga Retreat",
+      "date": "2025-10-10T07:00:00Z",
+      "location": "Dead Sea Resort",
+      "targetAudience": "Wellness Seekers",
+      "details": "Relax and rejuvenate with guided yoga sessions by the Dead Sea.",
+      "image": "/image/Yoga.png"
+    },
+    {
+      "name": "Art Exhibition",
+      "date": "2025-11-05T09:00:00Z",
+      "location": "Jerusalem Art Gallery",
+      "targetAudience": "Art Lovers",
+      "details": "A curated exhibition of contemporary art by Israeli artists.",
+      "image": "/image/Art.jpg"
+    },
+    {
+      "name": "Film Festival 2025",
+      "date": "2025-12-01T15:00:00Z",
+      "location": "Tel Aviv Cinematheque",
+      "targetAudience": "Film Buffs",
+      "details": "Enjoy screenings of the latest international films at the annual film festival.",
+      "image": "/image/Film.jpg"
+    },
+    {
+      "name": "Startup Pitch Event",
+      "date": "2025-07-25T14:00:00Z",
+      "location": "Innovation Hub, Herzliya",
+      "targetAudience": "Entrepreneurs and Investors",
+      "details": "Watch the most innovative startups pitch their ideas to investors.",
+      "image": "/image/Startup.webp"
+    },
+    {
+      "name": "Gaming Expo 2025",
+      "date": "2025-09-01T09:00:00Z",
+      "location": "Tel Aviv Convention Center",
+      "targetAudience": "Gamers",
+      "details": "Discover the latest video games, gadgets, and gaming technology.",
+      "image": "/image/Gaming.webp"
+    }
+  ]
