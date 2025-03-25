@@ -1,14 +1,18 @@
 import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router"
+import { useNavigate, useParams } from "react-router"
 import { eventContext } from "../context/eventContext";
 import { event } from "../types/event";
 import "../index.css"
+import { producerContext } from "../context/producerContext";
+import { producer } from "../types/producer";
 
 export const EventDetailsForProducer = () => {
     const { eventID } = useParams();
     const [currentEvent, setCurrentEvent] = useState<event | undefined>(undefined);
-    const { getEventByID, updateEvent } = useContext(eventContext);
+    const { getEventByID, updateEvent, deleteEvent } = useContext(eventContext);
     const [showModal, setShowModal] = useState(false);
+    const { currentProducer,updateProducer } = useContext(producerContext);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchEvent = async () => {
@@ -18,9 +22,9 @@ export const EventDetailsForProducer = () => {
             }
         };
         fetchEvent();
-    }, [eventID,getEventByID,updateEvent]);
+    }, [eventID, getEventByID, updateEvent]);
 
-    const update =async (event: any) => {
+    const update = async (event: any) => {
         event.preventDefault();
         setShowModal(false);
         if (currentEvent && updateEvent && getEventByID) {
@@ -32,14 +36,28 @@ export const EventDetailsForProducer = () => {
                 targetAudience: event.target.targetAudience.value,
                 details: event.target.details.value,
                 image: currentEvent.image
-            }     
-            const result=await updateEvent(currentEvent._id, newEvent);
-            if(result)
+            }
+            const result = await updateEvent(currentEvent._id, newEvent);
+            if (result)
                 setCurrentEvent(result)
         }
     }
 
-    const closeModal = (e:any) => {
+    const deleteE = async () => {
+        if (deleteEvent && currentEvent) {
+            await deleteEvent(currentEvent._id);
+            if (currentProducer && updateProducer && currentEvent) {
+                const newProducer: producer = {
+                    ...currentProducer,
+                    events: (currentProducer.events || []).filter(event => event.eventID !== currentEvent._id)
+                };
+                await updateProducer(currentProducer.email, newProducer);
+                navigate(`/producerDetails/${currentProducer.email}`);
+            }
+        }
+    }
+
+    const closeModal = (e: any) => {
         if (e.target.classList.contains("modal")) {
             setShowModal(false);
         }
@@ -59,6 +77,9 @@ export const EventDetailsForProducer = () => {
                     <button className="update-btn" onClick={() => setShowModal(true)}>
                         Update
                     </button>
+                    <button className="update-btn" onClick={() => deleteE()}>
+                        Delete
+                    </button>
 
                     {showModal && (
                         <div className="modal active" onClick={closeModal}>
@@ -76,7 +97,7 @@ export const EventDetailsForProducer = () => {
                                     <input type="text" id="targetAudience" defaultValue={currentEvent.targetAudience} />
                                     <label htmlFor="">details:</label>
                                     <textarea id="details" defaultValue={currentEvent.details}></textarea>
-                                    
+
                                     <div className="modal-buttons">
                                         <button type="submit" className="save-btn">Save</button>
                                     </div>
